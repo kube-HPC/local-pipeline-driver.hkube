@@ -1,0 +1,3 @@
+class wsMock {
+  init(pipeline) {}
+}

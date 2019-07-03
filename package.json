@@ -1,0 +1,32 @@
+{
+  "name": "local-pipeline-driver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@hkube/config": "^2.0.7",
+    "@hkube/dag": "^1.0.2",
+    "@hkube/logger": "^1.0.15",
+    "async": "^3.1.0",
+    "chai": "^4.2.0",
+    "clone": "^2.1.2",
+    "deep-extend": "^0.6.0",
+    "deep-get-set": "^1.1.0",
+    "flat": "^4.1.0",
+    "graphlib": "^2.1.7",
+    "lodash.groupby": "^4.6.0",
+    "lodash.merge": "^4.6.1",
+    "lodash.throttle": "^4.1.1",
+    "mocha": "^6.1.4",
+    "sinon": "^7.3.2",
+    "ws": "^7.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "maty zisserman",
+  "license": "MIT"
+}
