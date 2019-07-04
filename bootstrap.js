@@ -2,16 +2,17 @@ const configIt = require("@hkube/config");
 const Logger = require("@hkube/logger");
 const taskRunner = require("./lib/tasks/task-runner");
 const component = require("./lib/consts/componentNames").MAIN;
+const wsCommunictor = require("./lib/communicator/ws-communicator");
 let log;
 
 const modules = [taskRunner];
 
 class Bootstrap {
-  async init() {
+  async init(port = process.env.PORT) {
     try {
       const { main, logger } = configIt.load();
       this._handleErrors();
-
+      wsCommunictor.init(port);
       log = new Logger(main.serviceName, logger);
       log.info(`running application with env: ${configIt.env()}, version: ${main.version}, node: ${process.versions.node}`, { component });
       await Promise.all(modules.map(m => m.init(main)));
