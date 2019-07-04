@@ -14,8 +14,8 @@ class Bootstrap {
         try {
             const { main, logger } = configIt.load();
             this._handleErrors();
-            wsCommunictor.init(port);
             log = new Logger(main.serviceName, logger);
+            wsCommunictor.init(port);
             log.info(`running application with env: ${configIt.env()}, version: ${main.version}, node: ${process.versions.node}`, { component });
             await Promise.all(modules.map(m => m.init(main)));
         }

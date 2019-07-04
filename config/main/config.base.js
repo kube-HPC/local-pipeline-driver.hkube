@@ -1,4 +1,6 @@
+// eslint-disable-next-line import/no-dynamic-require
 const packageJson = require(`${process.cwd()}/package.json`);
+// eslint-disable-next-line no-multi-assign
 const config = (module.exports = {});
 
 config.serviceName = packageJson.name;
