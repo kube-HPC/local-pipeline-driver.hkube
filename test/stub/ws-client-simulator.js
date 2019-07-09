@@ -22,7 +22,7 @@ ws.on('message', (data) => {
     const _data = JSON.parse(data);
     if (_data.type === sendType.RUN_ALGORTIHM) {
         setTimeout(() => {
-            send(recivedType.ALGORTIHM_FINISHED_SUCCESS, { ..._data, result: true });
+            send(recivedType.ALGORTIHM_FINISHED_SUCCESS, { ..._data, result: { a: true, b: 5 } });
         }, 1000);
     }
     if (_data.type === sendType.PIPELINE_CREATED) {

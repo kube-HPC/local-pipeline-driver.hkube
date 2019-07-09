@@ -6,18 +6,30 @@ const component = require('./lib/consts/componentNames').MAIN;
 const wsCommunictor = require('./lib/communicator/ws-communicator');
 
 let log;
+const logger = {
+    transport: {
+        console: true,
+        logstash: false,
+        fluentd: false,
+        file: false
+    },
+    extraDetails: false,
+    isDefault: true,
+    verbosityLevel: 2
+};
+
 
 const modules = [taskRunner];
 
 class Bootstrap {
     async init(port = process.env.PORT) {
         try {
-            const { main, logger } = configIt.load();
             this._handleErrors();
-            log = new Logger(main.serviceName, logger);
+            log = new Logger('local-pipeline-driver', logger);
             wsCommunictor.init(port);
-            log.info(`running application with env: ${configIt.env()}, version: ${main.version}, node: ${process.versions.node}`, { component });
-            await Promise.all(modules.map(m => m.init(main)));
+            //    console.log('adasada');
+            log.info(`running application with env: ${configIt.env()}, node: ${process.versions.node}`, { component });
+            await Promise.all(modules.map(m => m.init()));
         }
         catch (error) {
             this._onInitFailed(error);
