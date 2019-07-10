@@ -28,5 +28,8 @@ ws.on('message', (data) => {
     if (_data.type === sendType.PIPELINE_CREATED) {
         send(recivedType.PIPELINE_EXECUTE, _data);
     }
+    if (_data.type === sendType.PIPELINE_FINISHED) {
+        console.log(`pipeline finished`)
+    }
     console.log(`recived message TYPE:${_data.type}`);
 });
