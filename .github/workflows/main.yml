@@ -31,10 +31,6 @@ jobs:
       - name: lint
         run: |
           npm run lint
-      - name: Coveralls
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
   publish:
     if: github.ref == 'refs/heads/master'
     needs: test
