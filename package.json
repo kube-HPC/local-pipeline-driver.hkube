@@ -14,7 +14,7 @@
     "clone": "^2.1.2",
     "deep-extend": "^0.6.0",
     "deep-get-set": "^1.1.0",
-    "flat": "^4.1.0",
+    "flat": "^5.0.1",
     "graphlib": "^2.1.7",
     "lodash.groupby": "^4.6.0",
     "lodash.merge": "^4.6.1",
