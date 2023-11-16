@@ -13,7 +13,7 @@
     "async": "^3.1.0",
     "clone": "^2.1.2",
     "deep-extend": "^0.6.0",
-    "deep-get-set": "^1.1.0",
+    "deep-get-set": "^1.1.2",
     "flat": "^4.1.0",
     "graphlib": "^2.1.7",
     "lodash.groupby": "^4.6.0",
